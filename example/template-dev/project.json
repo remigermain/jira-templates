@@ -1,0 +1,7 @@
+{
+  "name": "developper",
+  "description": "templates for developper",
+  "templates": {
+    "bug": "bug.md"
+  }
+}

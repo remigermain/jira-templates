@@ -1,0 +1,8 @@
+{
+  "name": "tester",
+  "description": "Template for tester teams",
+  "templates": {
+    "bug": "bug.html",
+    "task": "task.md"
+  }
+}
