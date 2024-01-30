@@ -12,7 +12,7 @@
 (function () {
   "use strict";
 
-  const settings = `
+  const choicesDialog = `
 <div id="template-settings">
   <style>
     #template-settings {
@@ -244,7 +244,7 @@
       </span>
       `
     })
-    div.innerHTML = settings.replace("---TEMPLATE---", final.join(""));
+    div.innerHTML = choicesDialog.replaceAll("---TEMPLATE---", final.join(""));
     document.body.appendChild(div)
   })
 

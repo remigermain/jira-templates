@@ -1,7 +1,8 @@
 import os
 import json
+import genericpath
 base = os.path.abspath(os.path.dirname(__file__))
-PROJECT_FOLDER = os.path.join(base, "project")
+PROJECT_FOLDER = os.path.join(base, "projects")
 
 TEMPLATES_VARS = {}
 
@@ -26,6 +27,9 @@ def main():
     gen_icons()
     projects = []
     for folder in os.listdir(PROJECT_FOLDER):
+        if not genericpath.isdir(os.path.join(PROJECT_FOLDER, folder)):
+            continue
+        
         with open(os.path.join(PROJECT_FOLDER, folder, "project.json"), "r") as f:
             project = json.load(f)
         

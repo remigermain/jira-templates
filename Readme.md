@@ -1,27 +1,59 @@
-# Installation
-first install https://www.tampermonkey.net/ (for chrome or firefox)
+**Jira Template Extension**
 
-run
+![Jira templat extention](/_/preview2.png)
+
+**What is it?**
+
+A Jira templates extension for [TamperMokey](https://www.tampermonkey.net/) is a tool that allows you to create Jira issue templates quickly and easily.
+
+**Why do you need it?**
+
+Creating templates can be a time-consuming and complex process, especially if you need to create many templates or if you need custom templates. A Jira template extension can simplify the task and allow you to create templates quickly and easily.
+
+**How does it work?**
+
+Jira template extensions typically work by allowing you to create templates from `html` or `markdown`. You can then modify the templates as you wish by adding or removing fields, modifying field values, or changing the template format.
+
+**Where to find an extension?**
+
+In folder `projects` create a folder named by your type of templates like `dev`, `test`, `customer` ...ect
+
+In this folder create a `project.json` contains this fields
+```json
+{
+    // mame of your templates
+    "name": "dev",
+    // a simple descriptions
+    "description": "templates for developper",
+    // all your templates
+    "templates": {
+        // keys is name of your button
+        // value the name for template file (in same folder)
+        "Bug": "bug.html",
+        // button mame can have icon, add your svg in `icons` folder
+        // and add {icon:NAME_OF_YOUR_ICON}, example for bug.svg `{icon:bug}
+        "{icon:taks} Task": "task.md",
+    }
+}
+```
+
+
+**Installation**
+
+After you have create your templates run
 ```
 python3 generate.py
 ```
+Install TamperMonkey
 
-go to extentions -> tampermonkey -> create new script, paste the content of `output.js` and save (CTRL + S or menu File -> save)
+go to extentions -> TamperMonkey -> create new script, paste the content of `output.js` and save (CTRL + S or menu File -> save)
 
-go to jira et hop
+go to jira and have fun!
+![preview](/_/preview.png)
+![preview](/_/choices.png)
+![preview](/_/choices2.png)
+![preview](/_/preview2.png)
 
-# Add new templates
-go to `project/YOU_PROJECT`
-open `project.json`
-add in `template` you tempalte `key` is name of button, value is name of file
-in button you can add `{icon:YOU_ICON_NAME}` and add you `YOU_ICON.svg` in icons folders
+**Html template**
 
-run `generate.py` copy content in tampermonkey
-
-You can create many project template, create folder, project.json with `name` and `templates` keys, re-run `generate.py`
-
-your template's file can be `.md` or `.html`
-create your template in jira, click on `copy` button, paste it in `.html` file add it in `project.json`
-
-# Icon
-download icons form here -> https://tabler.io/icons
+Is preferable de create template in jirra issue, click on `copy` button and save it in `.html` file for the exacte same output (with color, link ...ect)
