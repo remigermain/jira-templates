@@ -19,7 +19,7 @@ Jira template extensions typically work by allowing you to create templates from
 In folder `projects` create a folder named by your type of templates like `dev`, `test`, `customer` ...ect
 
 In this folder create a `project.json` contains this fields
-```json
+```
 {
     // mame of your templates
     "name": "dev",
@@ -49,6 +49,7 @@ Install TamperMonkey
 go to extentions -> TamperMonkey -> create new script, paste the content of `output.js` and save (CTRL + S or menu File -> save)
 
 go to jira and have fun!
+
 ![preview](/_/preview.png)
 ![preview](/_/choices.png)
 ![preview](/_/choices2.png)
